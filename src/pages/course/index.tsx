@@ -19,10 +19,10 @@ const CoursePage = () => {
 
   React.useEffect(() => {
     fetchData()
-  }, [])
+  }, [selectedClass])
 
   const fetchData = async () => {
-    const response = await axiosJWT.get(`${process.env.NEXT_PUBLIC_BASE_URL}/mardiyuana-parent/course`, {
+    const response = await axiosJWT.get(`${process.env.NEXT_PUBLIC_BASE_URL}/mardiyuana-parent/course${selectedClass ? `?academicYearId=${selectedClass.value}` : ""}`, {
       withCredentials: true,
       headers: {
         'Access-Control-Allow-Origin': '*', 
@@ -36,10 +36,12 @@ const CoursePage = () => {
         return { label: `${enroll?.className} (${enroll.academicYear})`, value: enroll.academicYearId }
       }))
 
-      const selected = response?.data?.data?.optionEnrollment?.find((enroll: OptionEnrollmentCourseList) => enroll.status === "ACTIVE")
-      setSelectedClass(
-        { label: `${selected?.className} (${selected.academicYear})`, value: selected.academicYearId }
-      )
+      if (!selectedClass) {
+        const selected = response?.data?.data?.optionEnrollment?.find((enroll: OptionEnrollmentCourseList) => enroll.status === "ACTIVE")
+        setSelectedClass(
+          { label: `${selected?.className} (${selected.academicYear})`, value: selected.academicYearId }
+        )
+      }
       setEnrollmentStudent(response?.data?.data?.enrollment_student)
     }
   }
