@@ -189,7 +189,7 @@ const ClassPage = () => {
           </div>
         </TabsContent>
         <TabsContent value="teacherNote">
-          <div className="w-[90%] mx-auto mt-5">
+          <div className="w-[90%] mx-auto mt-5 flex flex-col gap-3">
             <h2 className="font-semibold text-2xl mb-5">Teacher's Note</h2>
             {teacherNote?.map((note: TeacherNotes) => (
               <div className="rounded-xl bg-white py-4 shadow-lg">
@@ -203,8 +203,8 @@ const ClassPage = () => {
                   </div>
                 </div>
 
-                <h4 className="font-medium text-xl border-y border-slate-400 mt-4 px-4 py-2">{note.title}</h4>
-
+                <h4 className="font-medium text-xl border-slate-400 mt-4 px-4 py-2">{note.title}</h4>
+                <hr className="h-[2px] border-dotted w-[100%] mx-auto border-slate-300" />
                 <p className="text-justify mt-2 px-4 py-2">
                   {note.body}
                 </p>
