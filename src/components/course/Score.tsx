@@ -49,13 +49,14 @@ const Score = () => {
       </TabsList>
       {scoreCourseType.map((_, idx) => (
         <TabsContent value={`wkwk ${idx}`} className="mt-10">
+          <section
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 cursor-pointer"
+          >
           {scoreCoursesData?.map((score: ScoreCourseList, idx) => {
             return (
-              <section
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 cursor-pointer"
-                onClick={() => router.push(`/scoring/${score.scoreCourseId}`)}
-              >
-                <div className="py-5 px-6 bg-white rounded-[6px] flex flex-col cursor-pointer shadow-lg hover:shadow-xl">
+                <div className="py-5 px-6 bg-white rounded-[6px] flex flex-col cursor-pointer shadow-lg hover:shadow-xl"
+                  onClick={() => router.push(`/scoring/${score.scoreCourseId}`)}
+                >
                   <h3 className="font-medium text-[22px] mb-1">{scoreCourses[_ as keyof ScoreCourseTypeConstant]} {idx + 1}</h3>
                   <h5 className="text-base">{score.title}</h5>
                   <p className={cn("flex items-center gap-2",
@@ -67,9 +68,9 @@ const Score = () => {
                   <p className="">Score: {score.status === "DONE" ? (<strong>90</strong>) : "-"}</p>
                   <p className="text-sm">{score.type ==="ASSIGNMENT" ? "due" : "started at"}, {moment(score.scoreDue).format("LLL")}</p>
                 </div>
-              </section>
             )
           })}
+          </section>
         </TabsContent>
       ))}
     </Tabs>
