@@ -88,7 +88,7 @@ const ScorePage = () => {
                       <TableCell className="text-lg py-3 text-center">
                         <div className="flex justify-center items-start">
                           <p>{scoreType.scoreMean}</p>
-                          <ModalCumScore type={scoreType.scoreCourseType} subject="Fisika" scoreList={scoreType.scoreCourseDetail} />
+                          <ModalCumScore type={scoreType.scoreCourseType} subject={_.name} scoreList={scoreType.scoreCourseDetail} />
                         </div>
                       </TableCell>
                     )
