@@ -53,7 +53,7 @@ const EventDetail = () => {
 
       <div className="my-8 flex flex-start w-[90%] mx-auto max-w-[1400px]">
         <p className="text-md text-left italic">
-          Tanggal Mulai Event: {moment(event?.eventDate).format("LL")}
+          Tanggal Mulai Event: {moment(event?.eventDate).format("DD MMMM YYYY")}
         </p>
       </div>
 
@@ -65,7 +65,7 @@ const EventDetail = () => {
 
       <div className="my-8 flex flex-start w-[90%] mx-auto max-w-[1400px]">
         <p className="text-md text-left italic">
-          Ditulis tanggal: {moment(event?.createdDate).format("LL")}
+          Ditulis tanggal: {moment(event?.createdDate).format("DD MMMM YYYY")}
         </p>
       </div>
     </Layout>

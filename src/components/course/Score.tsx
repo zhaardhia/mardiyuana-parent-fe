@@ -66,7 +66,7 @@ const Score = () => {
                     <Icon icon={cn(score.status === "DONE" ? "lets-icons:check-fill" : "gridicons:cross-circle")} />
                   </p>
                   <p className="">Score: {score.status === "DONE" ? (<strong>{score.score}</strong>) : "-"}</p>
-                  <p className="text-sm">{score.type ==="ASSIGNMENT" ? "due" : "started at"}, {moment(score.scoreDue).format("LLL")}</p>
+                  <p className="text-sm">{score.type ==="ASSIGNMENT" ? "due" : "started at"}, {moment(score.scoreDue).format("LL")}</p>
                 </div>
             )
           })}
