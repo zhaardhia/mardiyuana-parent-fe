@@ -49,7 +49,7 @@ const CoursePage = () => {
   return (
     <Layout>
       <div className="flex justify-between items-center mb-8 w-[90%] mx-auto max-w-[1400px]">
-        <h1 className="text-2xl font-semibold">Courses</h1>
+        <h1 className="text-2xl font-semibold">Pelajaran</h1>
         <p>{moment().format('llll')}</p>
       </div>
 
@@ -70,8 +70,21 @@ const CoursePage = () => {
         />
       </div>
 
-      <div className="w-[90%] mx-auto flex gap-14 items-center max-w-[1400px]">
-        <Accordion type="single" collapsible className="w-full">
+      <div className="w-[90%] mx-auto flex flex-col gap-5 items-center max-w-[1400px]">
+        {courses?.map((_: CourseList, idx) => (
+          <div className="border-b border-slate-400 w-full flex justify-between items-center py-3">
+            <div>
+              <p className="text-lg">{_.name}</p>
+              <p className="text-base text-slate-600">
+                <span className="font-semibold">Guru</span>: {_.enrollment_teacher.teacherName}
+              </p>
+            </div>
+            <Link href={`/course/detail/${enrollmentStudent?.id}/${_.id}`} className="hover:underline text-blue-600">
+              Detail
+            </Link>
+          </div>
+        ))}
+        {/* <Accordion type="single" collapsible className="w-full">
           {courses?.map((_: CourseList, idx) => (
             <AccordionItem value={`item-${idx}`} className="border-b border-slate-400" key={_.id}>
               <AccordionTrigger className="text-lg py-7">{_.name}</AccordionTrigger>
@@ -85,7 +98,7 @@ const CoursePage = () => {
               </AccordionContent>
             </AccordionItem>
           ))}
-        </Accordion>
+        </Accordion> */}
       </div>
     </Layout>
   );

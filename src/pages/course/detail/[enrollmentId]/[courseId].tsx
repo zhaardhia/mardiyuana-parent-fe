@@ -55,7 +55,7 @@ const CourseDetail = () => {
           <img src="/photo_teacher.jpg" alt="" className="w-20 h-20 rounded-full object-cover" />
           <div className="flex flex-col gap-2">
             <h3 className="text-2xl font-semibold">{courseInitial?.teacherData.teacherName}</h3>
-            <p>Teacher | Class {courseInitial?.class.name}</p>
+            <p>Guru | Class {courseInitial?.class.name}</p>
           </div>
         </div>
       </div>
@@ -66,13 +66,13 @@ const CourseDetail = () => {
         <Tabs defaultValue="session" className="w-full overflow-x-hidden">
           <TabsList className="w-full flex items-center gap-4 justify-start pl-0 mb-3 min-w-[300px] overflow-x-scroll overflow-y-hidden">
             <TabsTrigger value="session" className="text-lg font-normal">
-              Session
+              Sesi
             </TabsTrigger>
             <TabsTrigger value="discussion" className="text-lg font-normal">
               Reminder
             </TabsTrigger>
             <TabsTrigger value="scoring" className="text-lg font-normal">
-              Scoring
+              Nilai
             </TabsTrigger>
           </TabsList>
 

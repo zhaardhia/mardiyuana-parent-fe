@@ -30,7 +30,7 @@ const Navbar = () => {
           SMP Mardi Yuana
         </Link>
         <div className="flex items-center gap-3 p-2">
-          <p className="cursor-default text-base hidden sm:block">Welcome, {state?.userInfo?.name}</p>
+          <p className="cursor-default text-base hidden sm:block">Selamat Datang, {state?.userInfo?.name}</p>
           <div
             className="cursor-pointer"
             onClick={() => {

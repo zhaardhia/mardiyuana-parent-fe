@@ -59,24 +59,24 @@ const Sidebar = () => {
           <ul className="font-medium">
             <li className={pathname === "/" ? "bg-white text-black" : "text-white"}>
               <Link href="/" className="flex items-center p-3 rounded-lg hover:underline gap-2">
-                <Icon icon="material-symbols:dashboard" width={20} /> Dashboard
+                <Icon icon="material-symbols:dashboard" width={20} /> Beranda
               </Link>
             </li>
             <li className={pathname === "/course" ? "bg-white text-black" : "text-white"}>
               <Link href="/course" className="flex items-center p-3 rounded-lg hover:underline gap-2">
-                <Icon icon="iconoir:book-solid" width={20} /> Course
+                <Icon icon="iconoir:book-solid" width={20} /> Pelajaran
               </Link>
             </li>
             <li className={pathname === "/score" ? "bg-white text-black" : "text-white"}>
               <Link href="/score" className="flex items-center p-3 rounded-lg hover:underline gap-2">
                 <Icon icon="octicon:graph-16" width={20} />
-                Score
+                Nilai
               </Link>
             </li>
             <li className={pathname === "/class" ? "bg-white text-black" : "text-white"}>
               <Link href="/class" className="flex items-center p-3 rounded-lg hover:underline gap-2">
                 <Icon icon="streamline:class-lesson" width={20} />
-                Your Class
+                Kelas
               </Link>
             </li>
           </ul>

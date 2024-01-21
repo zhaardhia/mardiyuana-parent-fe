@@ -133,7 +133,7 @@ const ClassPage = () => {
   return (
     <Layout>
       <div className="flex justify-between items-center mb-8 w-[90%] mx-auto max-w-[1400px]">
-        <h1 className="text-2xl font-semibold">Your Class</h1>
+        <h1 className="text-2xl font-semibold">Kelas</h1>
         <h1 className="text-2xl font-semibold">{teacherNote && teacherNote[0]?.school_class?.name}</h1>
       </div>
 
@@ -142,17 +142,17 @@ const ClassPage = () => {
         <div className="my-2 w-[90%] mx-auto py-3 flex gap-14 items-center max-w-[1400px]">
           <TabsList className="w-full flex items-center gap-4 justify-start pl-0 min-w-[250px] overflow-y-hidden overflow-x-scroll">
             <TabsTrigger value="classmate" className="text-lg font-normal">
-              View Classmate
+              Teman Kelas
             </TabsTrigger>
             <TabsTrigger value="teacherNote" className="text-lg font-normal">
-              Teacher Note
+              Catatan Guru
             </TabsTrigger>
           </TabsList>
         </div>
 
         <TabsContent value="classmate" className="w-full">
           <div className="w-[90%] mx-auto">
-            <h2 className="font-semibold text-2xl my-5">Classmates</h2>
+            <h2 className="font-semibold text-2xl my-5">Teman Kelas</h2>
           </div>
           
           <div className="my-5 w-[90%] mx-auto rounded-xl shadow-xl flex gap-14 items-center max-w-[1400px]">
@@ -190,7 +190,10 @@ const ClassPage = () => {
         </TabsContent>
         <TabsContent value="teacherNote">
           <div className="w-[90%] mx-auto mt-5 flex flex-col gap-3">
-            <h2 className="font-semibold text-2xl mb-5">Teacher's Note</h2>
+            <div className="mb-5">
+              <h2 className="font-semibold text-2xl">Catatan Guru</h2>
+              <p className="text-slate-600">Untuk informasi lengkapnya, silahkan hubungi Walikelas</p>
+            </div>
             {teacherNote?.map((note: TeacherNotes) => (
               <div className="rounded-xl bg-white py-4 shadow-lg">
                 <div className="flex items-center gap-4 px-4 ">
@@ -198,7 +201,7 @@ const ClassPage = () => {
                   <div className="flex flex-col">
                     <h3 className="font-semibold text-xl">{note.teacherName}.</h3>
                     <p className="font-normal">
-                      Teacher | {note.school_class.name} <span className="ml-4">{moment(note.createdDate).format("LLL")}</span>
+                      Guru | {note.school_class.name} <span className="ml-4">{moment(note.createdDate).format("LLL")}</span>
                     </p>
                   </div>
                 </div>

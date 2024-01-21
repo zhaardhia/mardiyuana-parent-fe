@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="flex justify-between items-center mb-8 w-[90%] mx-auto max-w-[1400px]">
-        <h1 className="text-2xl font-semibold">Dashboard</h1>
+        <h1 className="text-2xl font-semibold">Beranda</h1>
         <p>{moment().format('llll')}</p>
       </div>
 
@@ -53,7 +53,7 @@ export default function Home() {
 
       <div className="my-5 w-[90%] mx-auto py-3 flex lg:flex-row flex-col gap-14 items-center max-w-[1400px]">
         <div className="flex flex-col gap-4 lg:w-[55%] w-full">
-          <h2 className="text-xl">School Events</h2>
+          <h2 className="text-xl">Acara Sekolah</h2>
           <Carousel
             plugins={[
               Autoplay({
@@ -81,11 +81,11 @@ export default function Home() {
           </Carousel>
         </div>
         <div className="flex flex-col gap-4 lg:w-[45%] w-full h-[300px] overflow-y-scroll border-[1px] border-gray-300 border-opacity-60 p-5 rounded-xl">
-          <h2 className="text-xl mb-3">Announcement</h2>
+          <h2 className="text-xl mb-3">Pengumuman</h2>
           {announcements?.map((announcement: AnnouncementDashboard) => (
             <Link href={`/announcement/${announcement.id}`} className="bg-slate-100 hover:bg-slate-200 px-5 py-4 rounded-[15px]">{announcement.title}</Link>
           ))}
-          <Link href="/announcement" className="text-center text-blue-600 hover:underline cursor-pointer w-fit px-3">See more..</Link>
+          <Link href="/announcement" className="text-center text-blue-600 hover:underline cursor-pointer w-fit px-3">Lihat lainnya..</Link>
         </div>
       </div>
 
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
         <div className="lg:w-[55%] w-full">
           <div className="flex flex-col gap-4">
-            <h2 className="text-xl">Displaying Vote</h2>
+            <h2 className="text-xl">Voting Acara</h2>
             <Carousel
               plugins={[
                 Autoplay({

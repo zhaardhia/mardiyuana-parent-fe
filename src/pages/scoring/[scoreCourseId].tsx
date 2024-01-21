@@ -3,9 +3,9 @@ import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { useSessionUser } from "@/contexts/SessionUserContexts"
-import { ScoreCourseById } from "@/types"
+import { ScoreCourseById, ScoreCourseTypeConstant } from "@/types"
 import moment from "moment";
-
+import { scoreCourses } from "@/lib/constant";
 const ScoreCourseDetailPage = () => {
   const router = useRouter();
   const { scoreCourseId } = router.query;
@@ -40,7 +40,7 @@ const ScoreCourseDetailPage = () => {
       <hr className="h-[2px] border-dotted w-[90%] mx-auto border-slate-300" />
 
       <div className="my-4 w-[90%] mx-auto flex flex-col max-w-[1400px]">
-        <h2 className="mb-7 font-semibold text-2xl">{scoreCourseDetail?.type}: {scoreCourseDetail?.title}</h2>
+        <h2 className="mb-7 font-semibold text-2xl">{scoreCourses[scoreCourseDetail?.type as keyof ScoreCourseTypeConstant]}: {scoreCourseDetail?.title}</h2>
 
         <div className="p-4 border border-slate-400 rounded-xl bg-white">
           {/* <div className="flex items-center gap-4">

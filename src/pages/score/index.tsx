@@ -46,7 +46,7 @@ const ScorePage = () => {
   return (
     <Layout>
       <div className="flex justify-between items-center mb-8 w-[90%] mx-auto max-w-[1400px]">
-        <h1 className="text-2xl font-semibold">Score</h1>
+        <h1 className="text-2xl font-semibold">Nilai</h1>
         <p>{moment().format("llll")}</p>
       </div>
 
@@ -72,10 +72,10 @@ const ScorePage = () => {
           <TableHeader>
             <TableRow>
               <TableHead className="text-xl py-3 text-left">Mata Pelajaran</TableHead>
-              <TableHead className="text-xl py-3 text-center">Cum. Assignment</TableHead>
-              <TableHead className="text-xl py-3 text-center">Cum. Daily Exam</TableHead>
-              <TableHead className="text-xl py-3 text-center">Mid Exam</TableHead>
-              <TableHead className="text-xl py-3 text-center">Final Exam</TableHead>
+              <TableHead className="text-xl py-3 text-center">Tugas</TableHead>
+              <TableHead className="text-xl py-3 text-center">Ulangan Harian</TableHead>
+              <TableHead className="text-xl py-3 text-center">Ulangan Tengah Semester</TableHead>
+              <TableHead className="text-xl py-3 text-center">Ulangan Akhir Semester</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
