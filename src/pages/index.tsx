@@ -57,7 +57,7 @@ export default function Home() {
           <Carousel
             plugins={[
               Autoplay({
-                delay: 2000,
+                delay: 10000,
               }),
             ]}
           >
@@ -69,11 +69,14 @@ export default function Home() {
                     onClick={() => router.push(`/event/${event.id}`)}
                   >
                     {event.imageUrl ? (
-                      <img src={event.imageUrl} alt="" className="h-full object-cover rounded-xl w-full" />
+                      <img src={event.imageUrl} alt="" className="h-full object-cover rounded-xl w-full filter brightness-50" />
                     ) : (
                       <img src="/vote_img.png" alt="" className="h-full object-cover rounded-xl w-full" />
                     )}
-                    <p className="text-white absolute left-5 z-50 bottom-5 font-semibold text-xl">{event.name}</p>
+                    <div className="absolute left-5 z-50 bottom-5">
+                      <p className="text-white font-semibold text-xl">{event.name}</p>
+                      <div className="text-white font-light text-sm sm:w-[25rem] w-[15rem] truncate overflow-ellipsis">{event.description}</div>
+                    </div>
                   </div>
                 </CarouselItem>
               ))}
@@ -104,7 +107,7 @@ export default function Home() {
             <Carousel
               plugins={[
                 Autoplay({
-                  delay: 2000,
+                  delay: 10000,
                 }),
               ]}
             >
@@ -116,11 +119,14 @@ export default function Home() {
                       onClick={() => router.push(`/vote/${event.id}`)}
                     >
                       {event.imageUrl ? (
-                        <img src={event.imageUrl} alt="" className="h-full object-cover rounded-xl w-full" />
+                        <img src={event.imageUrl} alt="" className="h-full object-cover rounded-xl w-full filter brightness-50" />
                       ) : (
                         <img src="/vote_img.png" alt="" className="h-full object-cover rounded-xl w-full" />
                       )}
-                      <p className="text-white absolute left-5 z-50 bottom-5 font-semibold text-xl">{event.name}</p>
+                      <div className="absolute left-5 z-50 bottom-5">
+                        <p className="text-white font-semibold text-xl">{event.name}</p>
+                        <div className="text-white font-light text-sm sm:w-[25rem] w-[15rem] truncate overflow-ellipsis">{event.description}</div>
+                      </div>
                     </div>
                   </CarouselItem>
                 ))}

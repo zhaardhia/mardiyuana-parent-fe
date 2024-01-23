@@ -64,13 +64,22 @@ const Reminder: React.FC<ReminderProps> = ({ initialCourseData }) => {
                 // onClick={() => router.push(`/discussion/${courseId}`)}
               >
                 <img src="/photo_teacher.jpg" alt="" className="w-20 h-20 rounded-full object-cover" />
-                <div className="flex flex-col lg:flex-row lg:items-center ">
+                {/* <div className="flex flex-col lg:flex-row lg:items-center ">
                   <div className="flex flex-col lg:w-1/5">
                     <h3 className="font-semibold text-lg lg:text-xl">{reminder?.teacherName}</h3>
                     <p>Teacher | {reminder?.className}</p>
                     <p className="text-sm lg:text-base">{moment(reminder?.createdDate).format("LLL")}</p>
                   </div>
                   <div className="text-lg lg:text-2xl font-normal lg:ml-10 w-full lg:w-2/3">
+                    {reminder?.title}
+                  </div>
+                </div> */}
+                <div className="flex flex-col ">
+                  <div className="flex flex-col ">
+                    <h3 className="font-semibold text-lg lg:text-xl">{reminder?.teacherName}</h3>
+                    <p className="text-sm text-gray-400">{moment(reminder?.createdDate).format("LLL")}</p>
+                  </div>
+                  <div className="text-lg lg:text-xl font-normal w-full">
                     {reminder?.title}
                   </div>
                 </div>
