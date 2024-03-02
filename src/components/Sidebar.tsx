@@ -41,7 +41,7 @@ const Sidebar = () => {
         } sm:translate-x-0`}
         aria-label="Sidebar"
       >
-        <div className="h-full py-4 sm:py-0 overflow-y-auto gradient-sidebar flex flex-col gap-20 text-white">
+        <div className="h-full py-4 sm:py-0 relative overflow-y-auto gradient-sidebar flex flex-col gap-20 text-white">
           <div className="flex justify-end pr-3">
             <button
               data-drawer-target="default-sidebar"
@@ -80,6 +80,19 @@ const Sidebar = () => {
               </Link>
             </li>
           </ul>
+          <div className="absolute bottom-0 pb-4 px-3 flex flex-col w-full gap-2">
+            <div className="flex gap-2 items-center">
+              <a href="https://www.instagram.com/smpmardiyuanacilegon" target="_blank" >
+                <Icon icon="mdi:instagram" width={22} />
+              </a>
+              <a href=" https://www.youtube.com/@smpmardiyuanacilegon" target="_blank">
+                <Icon icon="mdi:youtube" width={25} />
+              </a>
+            </div>
+            <div>
+              <p className="text-sm font-thin">&copy; 2024 Mardiyuana</p>
+            </div>
+          </div>
         </div>
       </aside>
     </>
