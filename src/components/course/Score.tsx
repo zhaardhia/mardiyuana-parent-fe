@@ -54,7 +54,7 @@ const Score = () => {
           >
           {scoreCoursesData?.map((score: ScoreCourseList, idx) => {
             return (
-                <div className="py-5 px-6 bg-white rounded-[6px] flex flex-col cursor-pointer shadow-lg hover:shadow-xl"
+                <div className="py-5 px-6 bg-white rounded-[6px] border border-slate-400 flex flex-col cursor-pointer shadow-lg hover:shadow-xl"
                   onClick={() => router.push(`/scoring/${score.scoreCourseId}`)}
                 >
                   <h3 className="font-medium text-[22px] mb-1">{scoreCourses[_ as keyof ScoreCourseTypeConstant]} {idx + 1}</h3>
